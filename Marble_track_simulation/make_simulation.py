@@ -1,4 +1,4 @@
-#create xyz points
+#create xyz points and writes it to "looping_points.txt"
 import math
 import numpy as np
 import matplotlib.pyplot as plt
@@ -238,33 +238,33 @@ def main():
             """return all points to put into the file"""
             return self.str
 
-    # a = [0, 0 , 0]
-    # a = [0, 0, 8.2]
-    # b = [-4.5, 0, 5,9]
-    # points = Generate_points(a)
-    # points.g_p_line(b)
-    # # print("current vector is : ", points.v)
-    # points.g_p_looping(0.95, 0.3)
-    # points.g_p_vector(0.5, 1, 0.1)
-    # points.g_p_looping(0.95, 0.3, "droite")
-    # points.g_p_vector(2.3, 3, 0.65)
-    # points.g_p_line([-9.44970, 0.00000, 3.53400], 3)
-    # points.g_p_line([-11.09700, 0.00000, 3.53400], 1)
-    # points.g_p_line([-11.09700, 1.65000, 3.53400], 2)
-    # points.g_p_vector(2.2, 3)
-    # points.g_p_half_circle("droite", 1.3)
-    # points.g_p_vector(1.8, 3)
-    # points.g_p_vector(1.4, 3, -0.5)
-    # points.g_p_vector(0.6, 1, 0.146)
-    # points.g_p_line([-8, 0, 2.97800], 3)
-    # points.g_p_vector(0.8, 1)
-    # points.g_p_line([-7.201, 3.5, 2.500], 3)
-    # points.g_p_half_circle("left", 1.5)
-    # points.g_p_vector(0.8, 1)
-    # points.g_p_line([-7.20100,    2.70000,    2.00000], 3)
-    # points.g_p_vector(5)
-    # points.g_p_looping(0.8, 0.3, "gauche")
-    # points.g_p_vector(2.5, 3, 0.5)
+    a = [0, 0 , 0]
+    a = [0, 0, 8.2]
+    b = [-4.5, 0, 5,9]
+    points = Generate_points(a)
+    points.g_p_line(b)
+    # print("current vector is : ", points.v)
+    points.g_p_looping(0.95, 0.3)
+    points.g_p_vector(0.5, 1, 0.1)
+    points.g_p_looping(0.95, 0.3, "droite")
+    points.g_p_vector(2.3, 3, 0.65)
+    points.g_p_line([-9.44970, 0.00000, 3.53400], 3)
+    points.g_p_line([-11.09700, 0.00000, 3.53400], 1)
+    points.g_p_line([-11.09700, 1.65000, 3.53400], 2)
+    points.g_p_vector(2.2, 3)
+    points.g_p_half_circle("droite", 1.3)
+    points.g_p_vector(1.8, 3)
+    points.g_p_vector(1.4, 3, -0.5)
+    points.g_p_vector(0.6, 1, 0.146)
+    points.g_p_line([-8, 0, 2.97800], 3)
+    points.g_p_vector(0.8, 1)
+    points.g_p_line([-7.201, 3.5, 2.500], 3)
+    points.g_p_half_circle("left", 1.5)
+    points.g_p_vector(0.8, 1)
+    points.g_p_line([-7.20100,    2.70000,    2.00000], 3)
+    points.g_p_vector(5)
+    points.g_p_looping(0.8, 0.3, "gauche")
+    points.g_p_vector(2.5, 3, 0.5)
 
     # LOGO 36
     # a = [0, 0 , 3]
@@ -293,15 +293,15 @@ def main():
     # points.g_p_vector(8)
     # points.g_p_vector(5, 3, 3)
     
-    points = Generate_points([5, -5, 0])
-    points.g_p_line([5.1, -5, 0], 1)
-    points.g_p_right_angle(10, "g")
-    points.g_p_right_angle(5, "g")
-    points.g_p_half_circle("droite", 10)
-    points.g_p_half_circle("g", 8)
-    points.g_p_half_circle("droite", 6)
-    points.g_p_half_circle("g", 4)
-    points.g_p_half_circle("gauche", 4)
+#     points = Generate_points([5, -5, 0])
+#     points.g_p_line([5.1, -5, 0], 1)
+#     points.g_p_right_angle(10, "g")
+#     points.g_p_right_angle(5, "g")
+#     points.g_p_half_circle("droite", 10)
+#     points.g_p_half_circle("g", 8)
+#     points.g_p_half_circle("droite", 6)
+#     points.g_p_half_circle("g", 4)
+#     points.g_p_half_circle("gauche", 4)
     
 
     # d = input("Give point D in this format : X, Y, Z : ").split()
