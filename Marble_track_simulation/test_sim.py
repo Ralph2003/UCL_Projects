@@ -5,7 +5,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 def main():
-    steps = 500
+    steps = 300
     affichage_chemin(steps)
     v, a, t, ep, ek = donnees_physique(steps)
     xyz_graph()
@@ -15,17 +15,9 @@ def main():
 """
 ===============
 Partie sur l'affichage du chemin
-==============="""
-
-"""     XPath: array[3,steps]
-            coordonnées des points sur le chemin en 3 dimensions
-        sPath: array[N]
-            distance curvilinéaire des points
-        TPath: array[3,N]
-            vecteur tangent aux points (|T| = 1)
-        CPath: array[3,N]
-            vecteur de courbure aux points (|C| = courbure = 1/rayon)
-    """    
+===============
+"""
+  
     
 def affichage_chemin(steps):
     """affiche le chemin"""
@@ -64,9 +56,10 @@ def affichage_chemin(steps):
 """
 ===============
 Partie Physique
-==============="""
+===============
+"""
 
-"""     XPath: array[3,steps]
+"""Rappel :     XPath: array[3,steps]
             coordonnées des points sur le chemin en 3 dimensions
         sPath: array[N]
             distance curvilinéaire des points
@@ -76,6 +69,8 @@ Partie Physique
             vecteur de courbure aux points (|C| = courbure = 1/rayon)
     """    
 def donnees_physique(steps):
+    """ calcule et retourne les données à afficher plus tard,
+    prend en paramètre le nombre de points pour lesquels les données seront calculées"""
     # déclaration de données
 
     #points de passage
@@ -88,7 +83,7 @@ def donnees_physique(steps):
     Vs = 0 # vitesse initiale de la bille en m/s
     b = 0.012 # écartement des rails en m
     r = 0.010 # rayon de la bille en m
-    e = 0.0004 # écartement de la bille en m/(m/s)
+    e = 0.0004 # coefficient de frottement en m/(m/s)
     g = 9.807 # force de gravité sur Terre
     current_time = 0.0
     track_time = 6
@@ -115,6 +110,8 @@ def donnees_physique(steps):
         # else : Vs = 0
         """to delete"""
         print("Tpath1 is : ", round(TPath[0][i], 2), round(TPath[1][i], 2), round(TPath[2][i], 2))
+        print("Cpath1 is : ", round(CPath[0][i], 2), round(CPath[1][i], 2), round(CPath[2][i], 2))
+
         """"""
         
 
@@ -178,6 +175,7 @@ def donnees_physique(steps):
 
 
 def xyz_graph():
+    """plot and shows xyz coordinates"""
     #give lists of respectively x, y and z points according to time
     # give_points = points.__str__().split('\n')
     # print(give_points)
@@ -221,6 +219,8 @@ def xyz_graph():
     # print(f"x_points :{x_points}\n\n\n y points :{y_points}\n\n\n z points :{z_points}\n")
 
 def affichage_graphiques(v, a, t, EpSim, EkSim):
+    """plot and shows physics of the track, such as :
+    velocity, acceleation, potential energy, and kinetic energy, all according to time"""
 
     # affichage de la vitesse, et de l'accélération en fonction du temps
     # print("\n", v, "\n\n\n", a)
@@ -233,8 +233,9 @@ def affichage_graphiques(v, a, t, EpSim, EkSim):
     plt.plot(t, a, 'r-', label='a (m/s**2')
     # plt.plot(t, EkSim+EpSim, 'k-', label='E/m')
     plt.legend()
-    plt.ylabel('Speed and acceleration')
+    plt.ylabel('Speed and acceleration according to time')
     plt.xlabel('t [s]')
+    plt.title("Speed and acceleration")
     plt.show()
 
     # plot énergies en fonction du temps
@@ -245,6 +246,7 @@ def affichage_graphiques(v, a, t, EpSim, EkSim):
     plt.legend()
     plt.ylabel('Energy/mass [J/kg]')
     plt.xlabel('t [s]')
+    plt.title("Energy according to time")
     plt.show()
 
 
