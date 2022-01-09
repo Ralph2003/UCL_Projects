@@ -222,6 +222,7 @@ def main():
         def g_p_right_angle(self, r, dir = "g"):
 
             self.g_p_vector(r, (r + 1)//2)
+            self.v[2] = 0
 
             if dir == "gauche" or dir == "g" or dir == "left" or dir == "l":
                 d = -1
